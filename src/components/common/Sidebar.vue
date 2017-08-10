@@ -1,11 +1,12 @@
 <template>
     <div class="sidebar">
-        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" unique-opened router>
+        <el-menu :default-active="onRoutes" class="el-menu-vertical-demo" theme="dark" v-bind:unique-opened="true" router>
             <template v-for="item in items">
                 <template v-if="item.subs">
                     <el-submenu :index="item.index">
                         <template slot="title"><i :class="item.icon"></i>{{ item.title }}</template>
-                        <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">{{ subItem.title }}
+                        <el-menu-item v-for="(subItem,i) in item.subs" :key="i" :index="subItem.index">
+                            {{ subItem.title }}
                         </el-menu-item>
                     </el-submenu>
                 </template>

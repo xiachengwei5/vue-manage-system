@@ -6,11 +6,11 @@ Vue.use(Router);
 export default new Router({
     routes: [
         {
-            path: '/',
+            path: '/',              //默认挂载的路由
             redirect: '/login'
         },
         {
-            path: '/readme',
+            path: '/readme',        //项目首页
             component: resolve => require(['../components/common/Home.vue'], resolve),
             children:[
                 {
